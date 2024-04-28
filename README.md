@@ -1,3 +1,4 @@
+## 学习使用，还没有代码，只是结构提交，有哪里合适的地方感谢指正！
 #### 1、新建[libmodule_a](libmodule_a)、[libmodule_b](libmodule_b)
 
 #### 2、增加[config_mudule.properties](config_mudule.properties)组件文件配置
@@ -11,3 +12,6 @@
 
 #### 4、[settings.gradle](settings.gradle)使用动态配置方式对模块进行include
 * modules保存了所有的组件，新增组件只需要添加即可
+
+QQ：672277407 
+验证写 github，以防被略过。

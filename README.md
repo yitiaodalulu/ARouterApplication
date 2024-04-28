@@ -11,4 +11,3 @@
 
 #### 4、[settings.gradle](settings.gradle)使用动态配置方式对模块进行include
 * modules保存了所有的组件，新增组件只需要添加即可
-* 

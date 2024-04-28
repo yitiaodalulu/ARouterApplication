@@ -1,0 +1,39 @@
+pluginManagement {
+    repositories {
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "ARouterApplication"
+include ':app'
+//新增模块需要在modules添加，不需要其他操作。
+def modules = ['libmodule_a', 'libmodule_b']
+//---------------------------------------------------------------
+//---------------------------------------------------------------
+//------------------------下边配置代码按需修改----------------------
+//---------------------------------------------------------------
+def f = file('config_mudule.properties')
+if (f.exists()) {
+    Properties p = new Properties()
+    p.load(new FileInputStream(f))
+    p.each { k, v ->
+        if (modules.contains('' + k + '') && v == 'true') {
+            include ':' + k
+        }
+    }
+}
+

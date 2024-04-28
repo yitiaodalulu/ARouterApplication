@@ -1,0 +1,22 @@
+def f = file('../config_mudule.properties')
+if (f.exists()) {
+    Properties p = new Properties()
+    p.load(new FileInputStream((f)))
+    apply plugin: 'kotlin-android'
+    if (p.containsKey("isAllModule")) {
+        def isModule = p.get("isAllModule")
+        if (isModule) {
+            apply plugin: 'com.android.library'
+            android.sourceSets.main.manifest.srcFile 'src/main/manifest/AndroidManifest.xml'
+        } else {
+            p.each { k, v ->
+                if (k != "isAllModule") {
+                    apply plugin: 'com.android.application'
+                    android.defaultConfig.applicationId = 'com.example.' + k
+                    android.sourceSets.main.manifest.srcFile 'src/main/AndroidManifest.xml'
+                }
+            }
+        }
+    }
+}
+

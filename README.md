@@ -3,7 +3,7 @@
 #### 2、增加[config_mudule.properties](config_mudule.properties)组件文件配置
 * 是否开启组件化编译全局开关，用于开启 （library） 或者（application）模式切换
 * isAllModule=true
-* 为每个组件设置独立开启组件功能，debug
+* 为每个组件设置独立开启组件功能
 * libmodule_a=false
 * libmodule_b=true
 

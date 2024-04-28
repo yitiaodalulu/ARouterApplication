@@ -1,4 +1,4 @@
-## 学习使用，还没有代码，只是结构提交，有哪里合适的地方感谢指正！
+## 学习使用，还没有代码，只是结构提交，有哪里不对的地方感谢指正！
 #### 1、新建[libmodule_a](libmodule_a)、[libmodule_b](libmodule_b)
 
 #### 2、增加[config_mudule.properties](config_mudule.properties)组件文件配置

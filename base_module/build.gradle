@@ -1,0 +1,62 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: "kotlin-kapt"
+
+android {
+    compileSdk = libs.versions.compile.get().toInteger()
+    namespace = "win.regin.base"
+    resourcePrefix "base_"
+    defaultConfig {
+        minSdk = libs.versions.min.get().toInteger()
+        targetSdk = libs.versions.target.get().toInteger()
+        versionCode = libs.versions.version.code.get().toInteger()
+        versionName = libs.versions.version.name
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        kotlinOptions.freeCompilerArgs += ['-module-name', "regin.mvvmhub.base"]
+    }
+    configurations.configureEach {
+//        ResolutionStrategy rs = it.resolutionStrategy
+//        rs.eachDependency {
+//            if(it.requested.group == 'com.google.code.gson') {
+//                it.requested.version = "2.10.1"
+//            }
+//        }
+        resolutionStrategy{
+            force("com.google.code.gson:gson:2.10.1")
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
+
+dependencies {
+    implementation(libs.kotlin)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.fragmentKtx)
+    implementation(libs.androidx.activityKtx)
+
+    implementation(libs.viewBinding)
+    implementation(libs.retrofit)
+    implementation(libs.converterGson)
+    implementation(libs.mmkv)
+    implementation(libs.logger)
+    //沉浸式状态栏 基础依赖包，必须要依赖
+    implementation(libs.immersionbar)
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="base_MvvmHubAttr">
+        <attr name="base_hubAppMenuColor" format="color" />
+    </declare-styleable>
+</resources>

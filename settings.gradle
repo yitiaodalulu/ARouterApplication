@@ -1,25 +1,53 @@
 pluginManagement {
     repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
+        maven {
+            url 'https://maven.aliyun.com/repository/public'
+            name 'replace jcenter() and mavenCentral()'
         }
+        maven {
+            url 'https://maven.aliyun.com/repository/public'
+            name 'replace jcenter()'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/google'
+            name 'replace google()'
+        }
+        maven { url "https://jitpack.io" }
+        maven { url "https://maven.aliyun.com/nexus/content/repositories/jcenter" }
+        maven { url "https://maven.aliyun.com/nexus/content/groups/public/" }
         mavenCentral()
-        gradlePluginPortal()
+        google()
+        mavenCentral()
+
     }
 }
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        maven {
+            url 'https://maven.aliyun.com/repository/public'
+            name 'replace jcenter() and mavenCentral()'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/public'
+            name 'replace jcenter()'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/google'
+            name 'replace google()'
+        }
+        maven { url "https://jitpack.io" }
+        maven { url "https://maven.aliyun.com/nexus/content/repositories/jcenter" }
+        maven { url "https://maven.aliyun.com/nexus/content/groups/public/" }
+        mavenCentral()
         google()
         mavenCentral()
     }
 }
 rootProject.name = "ARouterApplication"
 include ':app'
+include ':base_module'
+
 //新增模块需要在modules添加，不需要其他操作。
 def modules = ['libmodule_a', 'libmodule_b']
 //---------------------------------------------------------------

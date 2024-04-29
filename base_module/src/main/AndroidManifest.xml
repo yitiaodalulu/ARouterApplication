@@ -1,0 +1,17 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="win.regin.base">
+
+    <!--上报信息所需-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--采集信息所需-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application>
+        <provider
+            android:name="win.regin.common.MvvmHubProvider"
+            android:authorities="${applicationId}.mvvm.hub.provider"
+            android:exported="false"
+            android:grantUriPermissions="true" />
+    </application>
+</manifest>

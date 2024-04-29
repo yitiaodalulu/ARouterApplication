@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id('kotlin-kapt')
 }
 
 android {
@@ -20,6 +21,7 @@ android {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
             }
         }
+        multiDexEnabled = true
     }
 
     buildTypes {
@@ -29,24 +31,49 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
-
+    buildFeatures {
+        viewBinding = true
+    }
+    buildFeatures { buildConfig = true }
+    packagingOptions{//打包时的相关配置
+        pickFirsts = ['META-INF/LICENSE']
+        merge 'META-INF/LICENSE'
+    }
 }
 
 dependencies {
-    implementation libs.androidx.core.ktx
-    implementation libs.androidx.appcompat
-    implementation libs.material
-    implementation libs.androidx.activity
-    implementation libs.androidx.constraintlayout
-    testImplementation libs.junit
-    androidTestImplementation libs.androidx.junit
-    androidTestImplementation libs.androidx.espresso.core
-    implementation 'com.alibaba:arouter-api:1.5.2'
-    annotationProcessor 'com.alibaba:arouter-compiler:1.5.2'
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    implementation(project(":base_module"))
+    implementation(libs.rxpay.api)
+    annotationProcessor(libs.rxpay.compiler)
+    implementation(libs.pickerview)
+    implementation(libs.easyblur)
+    implementation(libs.smartrefreshlayout)
+    implementation(libs.glide)
+    implementation(libs.lottie)
+    implementation(libs.banner2)
+    implementation(libs.androidx.viewpager2)
+    implementation(libs.com.tencent.mmkv)
+    implementation(libs.zxing)
+    implementation(libs.com.google.zxing.core)
+    implementation(libs.androidx.multidex)
+    implementation(libs.gson)
+    implementation(libs.xxpermissions)
+    implementation(libs.xpopup)
+    implementation(libs.logging.interceptor)
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.room.runtime)
+    kapt(libs.androidx.room.compiler)
+    implementation(libs.androidx.constraintlayout)
+
 }

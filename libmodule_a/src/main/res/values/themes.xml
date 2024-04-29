@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.ARouterApplication" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="modulea_Base.Theme.ARouterApplication" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.ARouterApplication" parent="Base.Theme.ARouterApplication" />
+    <style name="modulea_Theme.ARouterApplication" parent="modulea_Base.Theme.ARouterApplication" />
 </resources>

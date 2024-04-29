@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="base_ConnectException">网络错误</string>
+    <string name="base_UnknownHostException">无网络连接</string>
+    <string name="base_ElseNetException">其他错误</string>
+</resources>

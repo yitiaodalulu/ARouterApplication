@@ -1,6 +1,6 @@
 ## 学习使用，还没有代码，只是结构提交，有哪里不对的地方感谢指正！
 #### 1、新建[libmodule_a](libmodule_a)、[libmodule_b](libmodule_b)
-### 分别在组件[build.gradle](libmodule_a%2Fbuild.gradle)
+### 分别在组件[build.gradle](libmodule_a%2Fbuild.gradle)中添加
     apply from: '../config.gradle' 
 
     android {}

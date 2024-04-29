@@ -46,17 +46,17 @@ android {
 }
 
 dependencies {
-    implementation(libs.kotlin)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.fragmentKtx)
-    implementation(libs.androidx.activityKtx)
+    api(libs.kotlin)
+    api(libs.androidx.appcompat)
+    api(libs.androidx.constraintlayout)
+    api(libs.androidx.fragmentKtx)
+    api(libs.androidx.activityKtx)
 
-    implementation(libs.viewBinding)
-    implementation(libs.retrofit)
-    implementation(libs.converterGson)
-    implementation(libs.mmkv)
-    implementation(libs.logger)
+    api(libs.viewBinding)
+    api(libs.retrofit)
+    api(libs.converterGson)
+    api(libs.mmkv)
+    api(libs.logger)
     //沉浸式状态栏 基础依赖包，必须要依赖
-    implementation(libs.immersionbar)
+    api(libs.immersionbar)
 }
